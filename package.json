@@ -1,0 +1,23 @@
+{
+  "name": "recipe-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "es6-promise": "^4.2.8",
+    "express": "^4.17.1",
+    "fraction.js": "^4.0.13",
+    "isomorphic-fetch": "^3.0.0",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
+    "numeric-quantity": "^0.5.1",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yaniv Brener",
+  "license": "ISC"
+}
