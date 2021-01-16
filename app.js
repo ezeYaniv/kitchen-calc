@@ -4,6 +4,7 @@ const https = require("https");
 const request = require("request");
 const fetch = require("isomorphic-fetch");
 const jsdom = require("jsdom");
+const ejs = require("ejs");
 //note: I also installed jquery with npm i jquery, it is required in the asynchronous function below.
 
 //installed npm i fraction.js to convert decimals back into fractions
@@ -17,9 +18,11 @@ const numericQuantity = require("numeric-quantity");
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
+
 
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/index.html");
+  res.render("home");
 });
 
 //this captures the user's HTML url & serving # form submission
@@ -57,18 +60,22 @@ app.post("/", function (req, res) {
 
       //this code selects each li in the array, parses the numbers, converts to new quantity
       for (let i = 0; i < listItems.length; i++) {
-        //grab text content
+        
+        //grab text content of each listItems array
         //NOTE: using trim because otherwise it adds new line break \n characters and breaks the regex
         let currentLi = listItems[i].textContent.trim();
+        
         // use this regex to extract numbers from LI text
         const regexAll = /(\d*)(\.\d+|(\s+\d*\s*)?\s*\/\s*\d+|(\-\d*\s*)?\s*\/\s*\d+|(\&\d*\s*)?\s*\/\s*\d+|\s*[\u00BC-\u00BE\u2150-\u215E]+|(\-[\u00BC-\u00BE\u2150-\u215E])?)?/;
         let liNumber = regexAll.exec(currentLi);
+        
         console.log(listItems[i].innerHTML);
-        console.log(liNumber);
+        // console.log(liNumber);
+        
         //use the numeric-quantity npm library to convert fraction/number strings to numbers
         let num = numericQuantity(liNumber[0]);
         let newNum = num * servingsMult;
-        //console.log(listItems[i].innerHTML);
+        console.log(newNum);
 
         /*//code to create mixed fraction NOTE: Fraction.js library can do this below, with toFraction(true)
                 // if newNum>1, split newNum at the '.', then 
@@ -80,7 +87,7 @@ app.post("/", function (req, res) {
                 console.log(a[1]);
                 };*/
 
-        //change newNum to a string fraction for 1/3, 2/3, 3/3 so that the toFraction function doesn't give things like 500/133 
+        //convert newNum from decimal to mixed fraction string (if newNum is .333, .666 or .999, change back to a string fraction so that the toFraction function doesn't give things like 500/133)
         if (newNum == 0.333) {
           newNum = "1/3";
         } else if (newNum == 0.666) {
@@ -91,7 +98,9 @@ app.post("/", function (req, res) {
           newNum = new Fraction(newNum).toFraction(true);
         }
 
-        //replace old quantities with the new
+        console.log(newNum);
+
+        //replace old quantities with the new for an HTML list
         
 
         /*//find all vulgar fractions and replace them
@@ -102,6 +111,7 @@ app.post("/", function (req, res) {
                 console.log(liNum);
                 }*/
       }
+      // console.log(listItems);
     });
   })();
 });
