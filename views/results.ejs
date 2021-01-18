@@ -1,15 +1,27 @@
 <%- include("partials/header"); -%>
 
-<h1>Ingredients</h1>
-<h2>New List</h2>
-<ul>
-    <!-- insert forEach here with the array passed-->
-    <% oldList.forEach(function(element) { %>
-        <li><%= element %></li>
-    <% }); %>
-</ul>
-<p><%= oldList %></p>
+<section class="section-results">
+  <h1 class="results__h1">Ingredients</h1>
+  <h2 class="results__title">New List</h2>
+  <div class="results__container results__container--old">
+    <ul>
+      <!-- insert forEach here with the array passed-->
+      <% oldList.forEach(function(element) { %>
+      <li><%= element %></li>
+      <% }); %>
+    </ul>
+    <p><%= oldList %></p>
+  </div>
 
-
+  <div class="results__container results__container--new">
+    <ul>
+      <!-- insert forEach here with the array passed-->
+      <% newList.forEach(function(element) { %>
+      <li><%= element %></li>
+      <% }); %>
+    </ul>
+    <p><%= newList %></p>
+  </div>
+</section>
 
 <%- include("partials/footer"); -%>

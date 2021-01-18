@@ -21,8 +21,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 //global variable declarations
-// let newList = [];
-// let oldList = [];
+let newList = [];
+let oldList = [];
 
 app.get("/", function (req, res) {
   res.render("home");
@@ -54,8 +54,7 @@ app.post("/", function (req, res) {
     //     let headerEnd = headers[i + 1].textContent;
     //   }
     // }
-    let newList = [];
-    let oldList = [];
+   
     //this code selects li children of ul siblings of any header containing "Ingredients"
     $(dom.window.document).ready(function () {
       let listItems = $(":header:contains(Ingredients)")
@@ -113,10 +112,11 @@ app.post("/", function (req, res) {
                 console.log(liNum);
                 }*/
       }
+      console.log(oldList);
+
       // res.send(oldList, newList);
       // return oldList;
     });
-    console.log(oldList);
       console.log(newList);
   })();
 
@@ -124,7 +124,7 @@ app.post("/", function (req, res) {
 });
 
 app.get("/results", function (req, res) {
-  res.render("results", { oldList: oldList, new: newList });
+  res.render("results", { oldList: oldList, newList: newList });
 });
 
 app.listen(3000, function () {

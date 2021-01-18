@@ -21,11 +21,12 @@ html {
 
 body {
     box-sizing: border-box;
-    background-color: #fff;
+    /* background-color: #f2d1b6; */
+    background: url("../images/free-kitchen-pattern-vector-seamless.png") rgba(100, 100, 100,0.2);
+    background-blend-mode: multiply;
     font-size: 1.6rem;
     font-family: 'Lato', sans-serif;
-    text-align: center;
-
+    /* text-align: center; */
 }
 
 .navbar {
@@ -61,20 +62,42 @@ h2 {
 .section-form {
     margin: 0 auto;
     max-width: 50%;
-    background-color: #fff;
-    box-shadow: 0 10px 15px gray;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 500px;
+    background-color: beige;
+    box-shadow: 0 7px 20px gray;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* height: 500px; */
     font-size: 2rem;
     border-radius: 10px;
+    padding: 5rem;
+}
+/* ~~~~~~~~~~~~~~~~~ HOW IT WORKS SECTION ~~~~~~~~~~~~~~~~~~~*/
+.howitworks {
+    /* margin: 2rem 5rem; */
+}
+
+.howitworks__title {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+/* ~~~~~~~~~~~~~~~~~ FORM SECTION ~~~~~~~~~~~~~~~~~~~*/
+.form__title {
+    text-align: left;
+}
+
+.form-container {
+    flex: 0 1 auto;
 }
 
 .form-item {
-    margin: 2rem 5rem;
     text-align: left;
+    display: inline-block;
 }
+/* 
+.form-item:not(:first-child) {
+    margin: 2rem 0;
+}  */
 
 .btn {
     padding: 1rem 2rem;
@@ -93,5 +116,16 @@ input {
 }
 
 .input-number {
-    width: 60px;
+    max-width: 60px;
+}
+
+/* ~~~~~~~~~~~~~~~~~ RESULTS SECTION ~~~~~~~~~~~~~~*/
+.flex-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-evenly;
+}
+
+.results-container {
+    flex: 0 2 auto;
 }

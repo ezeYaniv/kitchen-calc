@@ -15,8 +15,15 @@
 </section>
 
 <section class="section-form centerhv">
-    
-  <form action="/" method="POST">
+  <div class="howitworks">
+    <h2 class="howitworks__title">How It Works</h2>
+    <p>
+      Just paste the recipe URL, input your desired servings and press convert.
+      It's cooking time!
+    </p>
+  </div>
+  <h2 class="form__title">Let's Cook</h2>
+  <form action="/" method="POST" class="form-container">
     <div class="form-item">
       <label for="url">Website URL: </label>
       <input
@@ -28,8 +35,9 @@
         autofocus
       />
     </div>
+    <br>
     <div class="form-item">
-      <label for="servingsOld">How many original servings?</label>
+      <label for="servingsOld">Original servings?</label>
       <input
         type="number"
         id="servingsOld"
@@ -39,7 +47,7 @@
       />
     </div>
     <div class="form-item">
-      <label for="servingsNew">How many servings do you want?</label>
+      <label for="servingsNew">Desired servings?</label>
       <input
         type="number"
         id="servingsNew"
@@ -48,9 +56,31 @@
         class="input-number"
       />
     </div>
-
+    <br>
     <button type="submit" class="btn btn--adjust">Convert!</button>
   </form>
+
+  <div class="flex-container">
+    <div class="results-container results-container--old">
+      <h3 class="results__title">Old Recipe</h3>
+      <ul>
+        <li>1 egg</li>
+        <li>1 egg</li>
+        <li>1 egg</li>
+        <li>1 egg</li>
+      </ul>
+    </div>
+
+    <div class="results-container results-container--new">
+      <h3 class="results__title">New Recipe</h3>
+      <ul>
+        <li>1 egg</li>
+        <li>1 egg</li>
+        <li>1 egg</li>
+        <li>1 egg</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <%- include("partials/footer"); -%>
