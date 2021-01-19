@@ -1,86 +1,88 @@
 <%- include("partials/header"); -%>
+<div class="content-wrapper">
+  <section class="section-title">
+    <h1 class="title__title">Kitchen Calc</h1>
+    <h2>Your handy ingredient list calculator/converter</h2>
+    <h2>No more mental kitchen math!</h2>
+  </section>
 
-<section class="section-title">
-  <h1>Kitchen Calc</h1>
-  <h2>Your handy ingredient list calculator/converter</h2>
-  <h2>No more mental kitchen math!</h2>
-</section>
-
-<section class="section-introduction">
+  <!-- <section class="section-introduction">
   <h2>How It Works</h2>
   <p>
     Just paste the recipe URL, input your desired servings and press convert
     quantities. It's cooking time!
   </p>
-</section>
+</section> -->
 
-<section class="section-form centerhv">
-  <div class="howitworks">
-    <h2 class="howitworks__title">How It Works</h2>
-    <p>
-      Just paste the recipe URL, input your desired servings and press convert.
-      It's cooking time!
-    </p>
-  </div>
-  <h2 class="form__title">Let's Cook</h2>
-  <form action="/" method="POST" class="form-container">
-    <div class="form-item">
-      <label for="url">Website URL: </label>
-      <input
-        type="url"
-        id="url"
-        name="url"
-        placeholder="Recipe URL"
-        required
-        autofocus
-      />
+  <section class="section-form">
+    <div class="howitworks">
+      <h2 class="howitworks__title">How It Works</h2>
+      <p class="howitworks__text">
+        Copy and paste the recipe URL, input your desired servings and press
+        convert. It's cooking time!
+      </p>
     </div>
-    <br>
-    <div class="form-item">
-      <label for="servingsOld">Original servings?</label>
-      <input
-        type="number"
-        id="servingsOld"
-        name="servingsOld"
-        required
-        class="input-number"
-      />
-    </div>
-    <div class="form-item">
-      <label for="servingsNew">Desired servings?</label>
-      <input
-        type="number"
-        id="servingsNew"
-        name="servingsNew"
-        required
-        class="input-number"
-      />
-    </div>
-    <br>
-    <button type="submit" class="btn btn--adjust">Convert!</button>
-  </form>
+    <h2 class="form__title">Let's Cook</h2>
+    <form action="/" method="POST" class="form-container">
+      <div class="form-item">
+        <label for="url">Website URL: </label>
+        <input
+          type="url"
+          id="url"
+          name="url"
+          placeholder="Recipe URL"
+          required
+          autofocus
+        />
+      </div>
+      <br />
+      <div class="form-item">
+        <label for="servingsOld">Original servings?</label>
+        <input
+          type="number"
+          id="servingsOld"
+          name="servingsOld"
+          required
+          class="input-number"
+        />
+      </div>
+      <div class="form-item">
+        <label for="servingsNew">Desired servings?</label>
+        <input
+          type="number"
+          id="servingsNew"
+          name="servingsNew"
+          required
+          class="input-number"
+        />
+      </div>
+      <br />
+      <button type="submit" class="btn btn--adjust">Convert!</button>
+    </form>
 
-  <div class="flex-container">
-    <div class="results-container results-container--old">
-      <h3 class="results__title">Old Recipe</h3>
-      <ul>
-        <li>1 egg</li>
-        <li>1 egg</li>
-        <li>1 egg</li>
-        <li>1 egg</li>
-      </ul>
-    </div>
+    <div class="flex-container">
+      <div class="results__container results__container--old">
+        <h3 class="results__title">Old Recipe</h3>
+        <ul class="results__list results__list--old">
+          <!-- insert forEach here with the array passed-->
+          <% if(oldList && oldList.length) { %> <%
+          oldList.forEach(function(element) { %>
+          <li class="results__item"><%= element %></li>
+          <% }) %> <% } %>
+        </ul>
+      </div>
 
-    <div class="results-container results-container--new">
-      <h3 class="results__title">New Recipe</h3>
-      <ul>
-        <li>1 egg</li>
-        <li>1 egg</li>
-        <li>1 egg</li>
-        <li>1 egg</li>
-      </ul>
+      <div class="results__container results__container--new">
+        <h3 class="results__title">New Recipe</h3>
+        <ul class="results__list results__list--new">
+          <!-- insert forEach here with the array passed-->
+          <% if(newList && newList.length) { %> <%
+          newList.forEach(function(element) { %>
+          <li class="results__item"><%= element %></li>
+          <% }); %> <% } %>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
+</div>
 <%- include("partials/footer"); -%>

@@ -7,6 +7,8 @@ const jsdom = require("jsdom");
 const ejs = require("ejs");
 //note: I also installed jquery with npm i jquery, it is required in the asynchronous function below.
 
+const createList = require(__dirname+"/createList.js");
+
 //installed npm i fraction.js to convert decimals back into fractions
 const Fraction = require("fraction.js");
 
@@ -25,7 +27,7 @@ let newList = [];
 let oldList = [];
 
 app.get("/", function (req, res) {
-  res.render("home");
+  res.render("home", { oldList: oldList, newList: newList } );
 });
 
 //this captures the user's HTML url & serving # form submission
@@ -54,14 +56,17 @@ app.post("/", function (req, res) {
     //     let headerEnd = headers[i + 1].textContent;
     //   }
     // }
-   
+
     //this code selects li children of ul siblings of any header containing "Ingredients"
     $(dom.window.document).ready(function () {
-      let listItems = $(":header:contains(Ingredients)")
+      let listItems = $(":header").filter(function() {return $(this).text() == "Ingredients"})
         .siblings("ul")
         .children("li")
         .get();
 
+
+        oldList = [];
+        newList = [];
       //this code selects each li in the array, parses the numbers, converts to new quantity
       for (let i = 0; i < listItems.length; i++) {
         //grab text content of each listItems array
@@ -113,18 +118,22 @@ app.post("/", function (req, res) {
                 }*/
       }
       console.log(oldList);
-
+      console.log(newList);
+      res.redirect("/results");
+      
+    
       // res.send(oldList, newList);
       // return oldList;
     });
-      console.log(newList);
+    
   })();
-
-  res.redirect("/results");
 });
+
 
 app.get("/results", function (req, res) {
   res.render("results", { oldList: oldList, newList: newList });
+  // oldList = [];
+  // newList = [];
 });
 
 app.listen(3000, function () {

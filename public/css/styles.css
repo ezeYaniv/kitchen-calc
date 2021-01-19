@@ -29,8 +29,13 @@ body {
     /* text-align: center; */
 }
 
+.content-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
 .navbar {
-    background-color: #EB4E15;
+    background-color: #FF866C;
 }
 
 .navbar__container {
@@ -50,20 +55,41 @@ body {
 
 
 h1 {
-    color: #EB4E15;
-    font-size: 3rem;
-    margin: 2rem 0;
+    color: #FF866C;
+    font-size: 5rem;
+    font-family: feltro-normal, sans-serif;
 }
 
 h2 {
     text-align: center;
+    font-family: Merriweather, serif;
+    margin-bottom: 2rem;
 }
+
+/*~~~~~~~~~~~~~~~~~~ TITLE CARD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.section-title {
+    margin: 2rem auto 1rem;
+    max-width: 50%;
+    width: 50%;
+    background-color: #FFEAD9;
+    box-shadow: 0 7px 20px #A6866C;
+    border-radius: 10px;
+    padding: 3rem 5rem 5rem;
+}
+
+.title__title {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~ CENTER CARD ~~~~~~~~~~~~~~~~~~~~~*/
 
 .section-form {
     margin: 0 auto;
     max-width: 50%;
-    background-color: beige;
-    box-shadow: 0 7px 20px gray;
+    background-color: #FFEAD9;
+    box-shadow: 0 7px 20px #A6866C;
     /* flex-direction: column; */
     /* justify-content: center; */
     /* height: 500px; */
@@ -72,13 +98,12 @@ h2 {
     padding: 5rem;
 }
 /* ~~~~~~~~~~~~~~~~~ HOW IT WORKS SECTION ~~~~~~~~~~~~~~~~~~~*/
-.howitworks {
-    /* margin: 2rem 5rem; */
+.howitworks__title {
+    text-align: left;
 }
 
-.howitworks__title {
-    margin-bottom: 3rem;
-    text-align: left;
+.howitworks__text {
+    margin-bottom: 2rem;
 }
 
 /* ~~~~~~~~~~~~~~~~~ FORM SECTION ~~~~~~~~~~~~~~~~~~~*/
@@ -93,6 +118,7 @@ h2 {
 .form-item {
     text-align: left;
     display: inline-block;
+    margin-bottom: 1rem;
 }
 /* 
 .form-item:not(:first-child) {
@@ -101,12 +127,12 @@ h2 {
 
 .btn {
     padding: 1rem 2rem;
-    background-color: #EB4E15;
-    margin-top: 1rem;
+    background-color: #FF866C;
+    margin-bottom: 1rem;
     border: none;
     border-radius: 5px;
     color: #fff;
-    box-shadow: 0 2px 5px gray;
+    box-shadow: 0 2px 5px #A6866C;
 }
 
 input {
@@ -126,6 +152,63 @@ input {
     justify-content:space-evenly;
 }
 
-.results-container {
-    flex: 0 2 auto;
+.results__container {
+    /* display: flex; */
+    flex: auto;
+    /* width: 50%; */
+    /* display: inline-block; */
 }
+
+/* ~~~~~~~~~~~~~~~~~~ RESULTS PAGE ~~~~~~~~~~~~~~~~~~~~~~*/
+.section-results {
+    /* height: 60vh; */
+    width: 800px;
+    margin: 2rem auto;
+    /* max-width: 50%; */
+    background-color: #FFEAD9;
+    box-shadow: 0 7px 20px #A6866C;
+    border-radius: 10px;
+    padding: 5rem;
+    background-color: antiquewhite;
+    
+}
+
+.results__h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.results__title {
+    margin-bottom: 1rem;
+    text-align: left;
+    padding-left: 2rem;
+    font-family: 'Merriweather', serif;
+}
+
+.results__list {
+    height: 500px;
+    background-color: #fff;
+    /* list-style: none; */
+    list-style-position: outside;
+    padding: 2rem;
+    padding-left: 4rem;
+}
+
+
+.results__container--old {
+    margin-right: 1rem;
+    color: #666666;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~ FOOTER SECTION ~~~~~~~~~~~~~~~~~~~*/
+footer {
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    background-color: #FF866C;
+    padding: 2rem;
+}
+
