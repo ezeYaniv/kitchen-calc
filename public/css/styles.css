@@ -27,11 +27,13 @@ body {
     font-size: 1.6rem;
     font-family: 'Lato', sans-serif;
     /* text-align: center; */
+    position: relative;
 }
 
 .content-wrapper {
     display: grid;
     grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
 }
 
 .navbar {
@@ -85,7 +87,7 @@ h2 {
 
 /*~~~~~~~~~~~~~~~~~~~~~~ CENTER CARD ~~~~~~~~~~~~~~~~~~~~~*/
 
-.section-form {
+.section-maincard {
     margin: 0 auto;
     max-width: 50%;
     background-color: #FFEAD9;
@@ -98,6 +100,10 @@ h2 {
     padding: 5rem;
 }
 /* ~~~~~~~~~~~~~~~~~ HOW IT WORKS SECTION ~~~~~~~~~~~~~~~~~~~*/
+.howitworks {
+    margin-bottom: 4rem;
+}
+
 .howitworks__title {
     text-align: left;
 }
@@ -107,12 +113,13 @@ h2 {
 }
 
 /* ~~~~~~~~~~~~~~~~~ FORM SECTION ~~~~~~~~~~~~~~~~~~~*/
-.form__title {
-    text-align: left;
-}
-
 .form-container {
     flex: 0 1 auto;
+    margin-bottom: 4rem;
+}
+
+.form__title {
+    text-align: left;
 }
 
 .form-item {
@@ -128,11 +135,11 @@ h2 {
 .btn {
     padding: 1rem 2rem;
     background-color: #FF866C;
-    margin-bottom: 1rem;
     border: none;
     border-radius: 5px;
     color: #fff;
     box-shadow: 0 2px 5px #A6866C;
+    margin: 1rem 0;
 }
 
 input {
@@ -170,7 +177,6 @@ input {
     border-radius: 10px;
     padding: 5rem;
     background-color: antiquewhite;
-    
 }
 
 .results__h1 {
@@ -203,8 +209,10 @@ input {
 
 /*~~~~~~~~~~~~~~~~~~~ FOOTER SECTION ~~~~~~~~~~~~~~~~~~~*/
 footer {
+    margin-top: 4rem;
     bottom: 0;
     width: 100%;
+    text-align: center;
 }
 
 .footer-container {

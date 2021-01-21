@@ -119,7 +119,7 @@ app.post("/", function (req, res) {
       }
       console.log(oldList);
       console.log(newList);
-      res.redirect("/results");
+      res.redirect("/");
       
     
       // res.send(oldList, newList);
