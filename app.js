@@ -25,16 +25,22 @@ app.set("view engine", "ejs");
 //global variable declarations
 let newList = [];
 let oldList = [];
+let servingsOld;
+let servingsNew;
+
 
 app.get("/", function (req, res) {
-  res.render("home", { oldList: oldList, newList: newList } );
+  res.render("home", { oldList: oldList, newList: newList, servingsOld: servingsOld, servingsNew: servingsNew } );
 });
 
 //this captures the user's HTML url & serving # form submission
 app.post("/", function (req, res) {
-  const url = req.body.url;
-  const servingsOld = req.body.servingsOld;
-  const servingsNew = req.body.servingsNew;
+  let url = req.body.url;
+  if(url.startsWith("http") == false) {
+    url = "http://" + url;
+  }
+  servingsOld = req.body.servingsOld;
+  servingsNew = req.body.servingsNew;
 
   const servingsMult = servingsNew / servingsOld;
 
@@ -131,7 +137,7 @@ app.post("/", function (req, res) {
 
 
 app.get("/results", function (req, res) {
-  res.render("results", { oldList: oldList, newList: newList });
+  res.render("results", { oldList: oldList, newList: newList, servingsOld: servingsOld, servingsNew: servingsNew });
   // oldList = [];
   // newList = [];
 });

@@ -17,25 +17,37 @@
   <section class="section-maincard">
     <div class="howitworks">
       <h2 class="howitworks__title">How It Works</h2>
-      <p class="howitworks__text">Copy and paste the recipe URL, input your desired servings and press convert. It's cooking time!</p>
+      <p class="howitworks__text">Copy and paste the recipe URL, input your desired servings and press convert. It's that easy!</p>
     </div>
     <div class="section-form">
       <h2 class="form__title">Let's Cook</h2>
       <form action="/" method="POST" class="form-container">
-        <div class="form-item">
-          <label for="url">Website URL: </label>
-          <input type="url" id="url" name="url" placeholder="Recipe URL" required autofocus />
+        <div class="form-align">
+          <div class="form-item">
+            <label for="url">Recipe URL: </label>
+            <input
+              type="text"
+              id="url"
+              name="url"
+              size=25;
+              placeholder="https://www.example.com"
+              pattern="?:^www\..*|?:^http."
+              oninvalid="setCustomValidity('Please make sure your URL starts with http, https, or www.')"
+              required
+              autofocus
+            />
+          </div>
+          <br />
+          <div class="form-item">
+            <label for="servingsOld">Original servings?</label>
+            <input type="number" id="servingsOld" name="servingsOld" required class="input-number" />
+          </div>
+          <br />
+          <div class="form-item">
+            <label for="servingsNew">Desired servings?</label>
+            <input type="number" id="servingsNew" name="servingsNew" required class="input-number" />
+          </div>
         </div>
-        <br />
-        <div class="form-item">
-          <label for="servingsOld">Original servings?</label>
-          <input type="number" id="servingsOld" name="servingsOld" required class="input-number" />
-        </div>
-        <div class="form-item">
-          <label for="servingsNew">Desired servings?</label>
-          <input type="number" id="servingsNew" name="servingsNew" required class="input-number" />
-        </div>
-        <br />
         <button type="submit" class="btn btn--adjust">Convert!</button>
       </form>
     </div>
@@ -43,26 +55,36 @@
     <div class="flex-container">
       <div class="results__container results__container--old">
         <h3 class="results__title">Old Recipe</h3>
-        <ul class="results__list results__list--old">
-          <!-- insert forEach here with the array passed-->
-          <% if(oldList && oldList.length) { %> 
-            <% oldList.forEach(function(element) { %>
-              <li class="results__item"><%= element %></li>
-            <% }) %> 
+        <div class="results__listwrapper">
+          <% if(servingsOld) { %>
+            <p class="results__servings"><em>Original servings: <%= servingsOld %></em></p>
           <% } %>
-        </ul>
+          <ul class="results__list results__list--old">
+            <!-- insert forEach here with the array passed-->
+            <% if(oldList && oldList.length) { %> 
+              <% oldList.forEach(function(element) { %>
+                <li class="results__item"><%= element %></li>
+              <% }) %> 
+            <% } %>
+          </ul>
+        </div>
       </div>
 
       <div class="results__container results__container--new">
         <h3 class="results__title">New Recipe</h3>
-        <ul class="results__list results__list--new">
-          <!-- insert forEach here with the array passed-->
-          <% if(newList && newList.length) { %> 
-            <% newList.forEach(function(element) { %>
-             <li class="results__item"><%= element %></li>
-            <% }); %> 
+        <div class="results__listwrapper">
+          <% if(servingsNew) { %>
+            <p class="results__servings"><em>New servings: <%= servingsNew %></em></p>
           <% } %>
-        </ul>
+          <ul class="results__list results__list--new">
+            <!-- insert forEach here with the array passed-->
+            <% if(newList && newList.length) { %> 
+              <% newList.forEach(function(element) { %>
+                <li class="results__item"><%= element %></li>
+              <% }); %> 
+            <% } %>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
