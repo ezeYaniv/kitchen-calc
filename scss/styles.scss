@@ -1,0 +1,248 @@
+//~~~~~~~~~~~~~~~~~~~ VARIABLES ~~~~~~~~~~~~~~~~~~~~~
+$color-primary: #ff866c;
+$color-secondary: #ffead9;
+$color-shadow: rgb(126, 102, 82);
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* this defines what 1rem is */
+    font-size: 62.5%;
+    /* 1 rem = 10 px, 10/16px = 62.5% */
+}
+
+.centerhv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    box-sizing: border-box;
+    background-color: $color-secondary;
+    background: url("../images/free-kitchen-pattern-vector-seamless-beige.png");
+    /* background-blend-mode: lighten; */
+    font-size: 1.6rem;
+    font-family: 'Lato', sans-serif;
+    /* text-align: center; */
+    position: relative;
+    width: 100%;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+}
+
+.navbar {
+    background-color: $color-primary;
+    width: 100%;
+}
+
+.navbar__container {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navbar__item {
+    margin: 1rem;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+h1 {
+    color: $color-primary;
+    font-size: 5rem;
+    font-family: feltro-normal, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    font-family: Merriweather, serif;
+    margin-bottom: 2rem;
+}
+
+/*~~~~~~~~~~~~~~~~~~ TITLE CARD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.section-title {
+    margin: 2rem auto;
+    width: 800px;
+    background-color: $color-secondary;
+    box-shadow: 0 7px 20px $color-shadow;
+    border-radius: 10px;
+    padding: 3rem 5rem 4rem;
+}
+
+.title__title {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~ CENTER CARD ~~~~~~~~~~~~~~~~~~~~~*/
+
+.section-maincard {
+    margin: 0 auto;
+    width: 800px;
+    background-color: $color-secondary;
+    box-shadow: 0 7px 20px $color-shadow;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* height: 500px; */
+    font-size: 2rem;
+    border-radius: 10px;
+    padding: 5rem;
+}
+/* ~~~~~~~~~~~~~~~~~ HOW IT WORKS SECTION ~~~~~~~~~~~~~~~~~~~*/
+.howitworks {
+    margin-bottom: 4rem;
+}
+
+.howitworks__title {
+    text-align: left;
+}
+
+.howitworks__text {
+    margin-bottom: 2rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~ FORM SECTION ~~~~~~~~~~~~~~~~~~~*/
+.section-form {
+}
+
+.form-container {
+    flex: 0 1 auto;
+    margin-bottom: 4rem;
+}
+
+.form__title {
+    text-align: left;
+}
+
+.form-item {
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+/* 
+.form-item:not(:first-child) {
+    margin: 2rem 0;
+}  */
+
+.btn {
+    padding: 1rem 2rem;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 2px 5px #A6866C;
+    margin: 1rem 0;
+}
+
+input {
+    height: 3rem;
+    margin-left: 1rem;
+    padding-left: 0.2rem;
+}
+input:focus {
+    box-shadow: 0 0 5px 2px $color-primary;
+    outline-color: $color-primary;
+    outline-width: 0px;
+    border: 0px solid black;
+}
+
+.input-number {
+    max-width: 60px;
+}
+
+/* ~~~~~~~~~~~~~~~~~ RESULTS SECTION ~~~~~~~~~~~~~~*/
+.flex-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-evenly;
+}
+
+.results__container {
+    /* display: flex; */
+    flex: auto;
+    /* width: 50%; */
+    /* display: inline-block; */
+}
+
+/* ~~~~~~~~~~~~~~~~~~ RESULTS PAGE ~~~~~~~~~~~~~~~~~~~~~~*/
+.section-results {
+    /* height: 60vh; */
+    width: 800px;
+    margin: 2rem auto;
+    /* max-width: 50%; */
+    background-color: $color-secondary;
+    box-shadow: $color-shadow;
+    border-radius: 10px;
+    padding: 5rem;
+    background-color: antiquewhite;
+}
+
+.results{
+    &__h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+&__title {
+    margin-bottom: 1rem;
+    text-align: left;
+    padding-left: 2rem;
+    font-family: 'Merriweather', serif;
+}
+
+&__list {
+    height: 500px;
+    background-color: #fff;
+    /* list-style: none; */
+    list-style-position: outside;
+    padding: 2rem;
+    padding-left: 4rem;
+}
+
+
+&__container--old {
+    margin-right: 1rem;
+    color: #666666;
+}
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~ FOOTER SECTION ~~~~~~~~~~~~~~~~~~~*/
+footer {
+    margin-top: 4rem;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-container {
+    background-color: $color-primary;
+    padding: 2rem;
+}
+
+.footer__copyright {
+    color: #fff;
+}
+
+.footer__copyright--vecteezy {
+    color: gray;
+}

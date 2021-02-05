@@ -12,12 +12,13 @@
     "isomorphic-fetch": "^3.0.0",
     "jquery": "^3.5.1",
     "jsdom": "^16.4.0",
+    "node-sass": "^5.0.0",
     "numeric-quantity": "^0.5.1",
     "request": "^2.88.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scss": "node-sass --watch scss -o public/css"
   },
   "author": "Yaniv Brener",
   "license": "ISC"
