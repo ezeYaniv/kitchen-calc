@@ -124,9 +124,6 @@ app.post("/", function (req, res) {
       
       res.redirect("/");
       
-    
-      // res.send(oldList, newList);
-      // return oldList;
     });
     
   })();
@@ -135,10 +132,11 @@ app.post("/", function (req, res) {
 
 app.get("/results", function (req, res) {
   res.render("results", { oldList: oldList, newList: newList, servingsOld: servingsOld, servingsNew: servingsNew });
-  // oldList = [];
-  // newList = [];
+
 });
 
-app.listen(3000, function () {
-  console.log("Server is running on port 3000.");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
