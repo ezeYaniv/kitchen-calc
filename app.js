@@ -27,15 +27,16 @@ let newList = [];
 let oldList = [];
 let servingsOld;
 let servingsNew;
+let url;
 
 
 app.get("/", function (req, res) {
-  res.render("home", { oldList: oldList, newList: newList, servingsOld: servingsOld, servingsNew: servingsNew } );
+  res.render("home", { oldList: oldList, newList: newList, servingsOld: servingsOld, servingsNew: servingsNew, url: url } );
 });
 
 //this captures the user's HTML url & serving # form submission
 app.post("/", function (req, res) {
-  let url = req.body.url;
+  url = req.body.url;
   if(url.startsWith("http") == false) {
     url = "http://" + url;
   }
@@ -123,8 +124,7 @@ app.post("/", function (req, res) {
                 console.log(liNum);
                 }*/
       }
-      console.log(oldList);
-      console.log(newList);
+      
       res.redirect("/");
       
     

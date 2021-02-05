@@ -20,18 +20,40 @@ body {
   box-sizing: border-box;
   background-color: #ffead9;
   background: url("../images/free-kitchen-pattern-vector-seamless-beige.png");
+  background-size: 25%;
   /* background-blend-mode: lighten; */
-  font-size: 1.6rem;
-  font-family: "Lato", sans-serif;
   /* text-align: center; */
   position: relative;
-  width: 100%;
-  color: #301914; }
+  width: 100%; }
 
 .content-wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%; }
+
+h1 {
+  color: #fff;
+  font-size: 6rem;
+  font-family: feltro-normal, sans-serif; }
+
+h2 {
+  text-align: center;
+  font-family: Merriweather, serif;
+  margin-bottom: 2rem;
+  font-size: 2.5rem; }
+
+.h2--white {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 0.5rem; }
+
+.intro--math {
+  margin-bottom: 2rem; }
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #301914;
+  font-size: 1.7rem; }
 
 .navbar {
   background-color: #ff866c;
@@ -51,43 +73,39 @@ body {
   text-decoration: none;
   color: #fff; }
 
-h1 {
-  color: #ff866c;
-  font-size: 5rem;
-  font-family: feltro-normal, sans-serif; }
-
-h2 {
-  text-align: center;
-  font-family: Merriweather, serif;
-  margin-bottom: 2rem; }
-
 /*~~~~~~~~~~~~~~~~~~ TITLE CARD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .section-title {
   margin: 2rem auto;
-  width: 800px;
+  max-width: 800px;
   background-color: #ffead9;
   box-shadow: 0 7px 20px #7e6652;
-  border-radius: 10px;
-  padding: 3rem 5rem 4rem; }
+  border-radius: 10px; }
+
+.title__wrapper {
+  margin-bottom: 3rem;
+  padding: 2.5rem 0 2.5rem;
+  background-color: #ff866c;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; }
 
 .title__title {
   text-align: center;
-  font-size: 5rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 1rem; }
 
 /*~~~~~~~~~~~~~~~~~~~~~~ CENTER CARD ~~~~~~~~~~~~~~~~~~~~~*/
 .section-maincard {
   margin: 0 auto;
-  width: 800px;
+  max-width: 800px;
   background-color: #ffead9;
   box-shadow: 0 7px 20px #7e6652;
   /* flex-direction: column; */
   /* justify-content: center; */
   /* height: 500px; */
-  font-size: 2rem;
   border-radius: 10px;
-  padding: 5rem;
   text-align: center; }
+
+.card-padding {
+  padding: 0 5rem 5rem; }
 
 /* ~~~~~~~~~~~~~~~~~ HOW IT WORKS SECTION ~~~~~~~~~~~~~~~~~~~*/
 .howitworks {
@@ -198,4 +216,4 @@ footer {
   color: #fff; }
 
 .footer__copyright--vecteezy {
-  color: gray; }
+  color: #ddd; }

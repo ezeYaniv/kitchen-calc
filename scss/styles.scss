@@ -5,6 +5,7 @@ $color-shadow: rgb(126, 102, 82);
 $color-shadow2: #301914;
 $text-color: #301914;
 
+//~~~~~~~~~~~~~~~ GLOBAL & UTILITY CLASSES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *,
 *::before,
 *::after {
@@ -30,13 +31,11 @@ body {
   box-sizing: border-box;
   background-color: $color-secondary;
   background: url("../images/free-kitchen-pattern-vector-seamless-beige.png");
+  background-size: 25%;
   /* background-blend-mode: lighten; */
-  font-size: 1.6rem;
-  font-family: "Lato", sans-serif;
   /* text-align: center; */
   position: relative;
   width: 100%;
-  color: $text-color;
 }
 
 .content-wrapper {
@@ -45,6 +44,37 @@ body {
   grid-template-columns: 100%;
 }
 
+//~~~~~~~~~~~~~~~ TYPOGRAPHY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+h1 {
+  color: #fff;
+  font-size: 6rem;
+  font-family: feltro-normal, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-family: Merriweather, serif;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.h2--white {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 0.5rem; 
+}
+
+.intro--math {
+    margin-bottom: 2rem;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: $text-color;
+  font-size: 1.7rem; 
+}
+
+//~~~~~~~~~~~~~~~ NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .navbar {
   background-color: $color-primary;
   width: 100%;
@@ -67,48 +97,47 @@ body {
   color: #fff;
 }
 
-h1 {
-  color: $color-primary;
-  font-size: 5rem;
-  font-family: feltro-normal, sans-serif;
-}
-
-h2 {
-  text-align: center;
-  font-family: Merriweather, serif;
-  margin-bottom: 2rem;
-}
-
 /*~~~~~~~~~~~~~~~~~~ TITLE CARD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .section-title {
   margin: 2rem auto;
-  width: 800px;
+  max-width: 800px;
   background-color: $color-secondary;
   box-shadow: 0 7px 20px $color-shadow;
   border-radius: 10px;
-  padding: 3rem 5rem 4rem;
+  //   padding: 3rem 5rem 4rem;
 }
 
-.title__title {
-  text-align: center;
-  font-size: 5rem;
-  margin-bottom: 2rem;
+.title {
+  &__wrapper {
+    margin-bottom: 3rem;
+    padding: 2.5rem 0 2.5rem;
+    background-color: $color-primary;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~ CENTER CARD ~~~~~~~~~~~~~~~~~~~~~*/
 
 .section-maincard {
   margin: 0 auto;
-  width: 800px;
+  max-width: 800px; 
   background-color: $color-secondary;
   box-shadow: 0 7px 20px $color-shadow;
   /* flex-direction: column; */
   /* justify-content: center; */
   /* height: 500px; */
-  font-size: 2rem;
   border-radius: 10px;
-  padding: 5rem;
   text-align: center;
+}
+
+.card-padding {
+  padding: 0 5rem 5rem;
 }
 /* ~~~~~~~~~~~~~~~~~ HOW IT WORKS SECTION ~~~~~~~~~~~~~~~~~~~*/
 .howitworks {
@@ -141,7 +170,6 @@ h2 {
     display: inline-block;
     margin-bottom: 1rem;
   }
-
 }
 .btn {
   padding: 1rem 2rem;
@@ -168,7 +196,7 @@ input {
 }
 
 .input-number {
-    max-width: 60px;
+  max-width: 60px;
 }
 
 /* ~~~~~~~~~~~~~~~~~ RESULTS SECTION ~~~~~~~~~~~~~~*/
@@ -254,5 +282,5 @@ footer {
 }
 
 .footer__copyright--vecteezy {
-  color: gray;
+  color: #ddd;
 }
