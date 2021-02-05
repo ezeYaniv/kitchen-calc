@@ -33,7 +33,6 @@ body {
   background: url("../images/free-kitchen-pattern-vector-seamless-beige.png");
   background-size: 25%;
   /* background-blend-mode: lighten; */
-  /* text-align: center; */
   position: relative;
   width: 100%;
 }
@@ -59,19 +58,19 @@ h2 {
 }
 
 .h2--white {
-    color: #fff;
-    font-size: 2rem;
-    margin-bottom: 0.5rem; 
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .intro--math {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 body {
   font-family: "Lato", sans-serif;
   color: $text-color;
-  font-size: 1.7rem; 
+  font-size: 1.7rem;
 }
 
 //~~~~~~~~~~~~~~~ NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -126,12 +125,9 @@ body {
 
 .section-maincard {
   margin: 0 auto;
-  max-width: 800px; 
+  max-width: 800px;
   background-color: $color-secondary;
   box-shadow: 0 7px 20px $color-shadow;
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* height: 500px; */
   border-radius: 10px;
   text-align: center;
 }
@@ -142,12 +138,8 @@ body {
 /* ~~~~~~~~~~~~~~~~~ HOW IT WORKS SECTION ~~~~~~~~~~~~~~~~~~~*/
 .howitworks {
   margin-bottom: 4rem;
-  &__title {
-    // text-align: left;
-  }
 
   &__text {
-    // margin-bottom: 2rem;
     margin: 0 2rem 2rem;
   }
 }
@@ -160,7 +152,6 @@ body {
   }
 
   &-align {
-    // text-align: left;
     width: 50%;
     margin: 0 auto;
   }
@@ -209,10 +200,7 @@ input {
 .results {
   &__container {
     text-align: left;
-    /* display: flex; */
     flex: auto;
-    /* width: 50%; */
-    /* display: inline-block; */
 
     &--old {
       margin-right: 1rem;
@@ -238,7 +226,6 @@ input {
   }
 
   &__list {
-    /* list-style: none; */
     list-style-position: outside;
     padding-left: 2rem;
   }
@@ -272,15 +259,17 @@ footer {
   text-align: center;
 }
 
-.footer-container {
-  background-color: $color-primary;
-  padding: 2rem;
-}
+.footer {
+  &-container {
+    background-color: $color-primary;
+    padding: 2rem;
+  }
 
-.footer__copyright {
-  color: #fff;
-}
-
-.footer__copyright--vecteezy {
-  color: #ddd;
+  &__copyright {
+    color: #fff;
+    &--vecteezy {
+      color: #ddd;
+      font-size: 1rem;
+    }
+  }
 }

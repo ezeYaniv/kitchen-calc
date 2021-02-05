@@ -53,29 +53,26 @@ app.post("/", function (req, res) {
     //this requires jquery and loads the $ selector for use
     const $ = (jQuery = require("jquery")(dom.window));
 
-    //***STARTING HERE, THIS IS FOR NON WPRM SITES!!!!
-    // console.log(dom.window.document.body.innerHTML);
-    //***DELETE? this code selects all h3 headers and defines a variable for Ingredients header and the following h3 header text
-    // const headers = dom.window.document.querySelectorAll("h3");
-    // for (let i = 0; i < headers.length; i++) {
-    //   if (headers[i].textContent === "Ingredients") {
-    //     let headerIng = headers[i].textContent;
-    //     let headerEnd = headers[i + 1].textContent;
-    //   }
-    // }
-
-    //this code selects li children of ul siblings of any header containing "Ingredients"
     $(dom.window.document).ready(function () {
-      let listItems = $(":header").filter(function() {return $(this).text() == "Ingredients"})
-        .siblings("ul")
-        .children("li")
-        .get();
+      
+      let listItems;
 
+      /************************* CHECKS WPRM SITES VS. NON-WPRM ******************************** */
+      if($(".wprm-recipe-ingredients").length > 0) {
+        listItems = $(".wprm-recipe-ingredients > li.wprm-recipe-ingredient").get();
+      } else {
+      
+        listItems = $(":header").filter(function() { 
+          return $(this).text() == "Ingredients"
+          }).siblings("ul").children("li").get();  //this code selects li children of ul siblings of any header containing "Ingredients"
+        }
 
         oldList = [];
         newList = [];
+        
       //this code selects each li in the array, parses the numbers, converts to new quantity
       for (let i = 0; i < listItems.length; i++) {
+
         //grab text content of each listItems array
         //NOTE: using trim because otherwise it adds new line break \n characters and breaks the regex
         let currentLi = listItems[i].textContent.trim();

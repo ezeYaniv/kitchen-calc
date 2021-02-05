@@ -22,7 +22,6 @@ body {
   background: url("../images/free-kitchen-pattern-vector-seamless-beige.png");
   background-size: 25%;
   /* background-blend-mode: lighten; */
-  /* text-align: center; */
   position: relative;
   width: 100%; }
 
@@ -98,9 +97,6 @@ body {
   max-width: 800px;
   background-color: #ffead9;
   box-shadow: 0 7px 20px #7e6652;
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* height: 500px; */
   border-radius: 10px;
   text-align: center; }
 
@@ -158,10 +154,7 @@ input {
 
 .results__container {
   text-align: left;
-  /* display: flex; */
-  flex: auto;
-  /* width: 50%; */
-  /* display: inline-block; */ }
+  flex: auto; }
   .results__container--old {
     margin-right: 1rem;
     color: #666666; }
@@ -181,7 +174,6 @@ input {
   margin-bottom: 2rem; }
 
 .results__list {
-  /* list-style: none; */
   list-style-position: outside;
   padding-left: 2rem; }
 
@@ -214,6 +206,6 @@ footer {
 
 .footer__copyright {
   color: #fff; }
-
-.footer__copyright--vecteezy {
-  color: #ddd; }
+  .footer__copyright--vecteezy {
+    color: #ddd;
+    font-size: 1rem; }
