@@ -5,6 +5,11 @@ $color-shadow: rgb(126, 102, 82);
 $color-shadow2: #301914;
 $text-color: #301914;
 
+//~~~~~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~~~~~~~~~~~~~~~
+$tablet: 992px;
+$phone: 768px; 
+
+
 //~~~~~~~~~~~~~~~ GLOBAL & UTILITY CLASSES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *,
 *::before,
@@ -48,6 +53,10 @@ h1 {
   color: #fff;
   font-size: 6rem;
   font-family: feltro-normal, sans-serif;
+
+  @media (max-width: $phone) {
+    font-size: 4.5rem;
+  }
 }
 
 h2 {
@@ -55,12 +64,19 @@ h2 {
   font-family: Merriweather, serif;
   margin-bottom: 2rem;
   font-size: 2.5rem;
+  
+  @media (max-width: $phone) {
+    font-size: 2rem;
+  }
 }
 
 .h2--white {
   color: #fff;
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  @media (max-width: $phone) {
+    font-size: 1.5rem;
+  }
 }
 
 .intro--math {
@@ -71,6 +87,10 @@ body {
   font-family: "Lato", sans-serif;
   color: $text-color;
   font-size: 1.7rem;
+
+  @media (max-width: $phone) {
+    font-size: 1.5rem;
+  }
 }
 
 //~~~~~~~~~~~~~~~ NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,14 +117,17 @@ body {
 }
 
 /*~~~~~~~~~~~~~~~~~~ TITLE CARD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.section-title {
-  margin: 2rem auto;
-  max-width: 800px;
-  background-color: $color-secondary;
-  box-shadow: 0 7px 20px $color-shadow;
-  border-radius: 10px;
-  //   padding: 3rem 5rem 4rem;
-}
+// .section-title {
+//   margin: 2rem auto;
+//   max-width: 800px;
+//   background-color: $color-secondary;
+//   box-shadow: 0 7px 20px $color-shadow;
+//   border-radius: 10px;
+  
+//   @media (max-width: $phone) {
+//     width: 75%;
+//   }
+// }
 
 .title {
   &__wrapper {
@@ -124,20 +147,32 @@ body {
 /*~~~~~~~~~~~~~~~~~~~~~~ CENTER CARD ~~~~~~~~~~~~~~~~~~~~~*/
 
 .section-maincard {
-  margin: 0 auto;
+  margin: 2rem auto;
   max-width: 800px;
   background-color: $color-secondary;
   box-shadow: 0 7px 20px $color-shadow;
   border-radius: 10px;
   text-align: center;
+
+  @media (max-width: $phone) {
+    max-width: 80%;
+  }
 }
 
 .card-padding {
   padding: 0 5rem 5rem;
+
+  @media (max-width: $phone) {
+    padding: 0 2.5rem 4rem;
+  }
 }
 /* ~~~~~~~~~~~~~~~~~ HOW IT WORKS SECTION ~~~~~~~~~~~~~~~~~~~*/
 .howitworks {
   margin-bottom: 4rem;
+
+  @media (max-width: $phone) {
+    margin-bottom: 2.5rem;
+  }
 
   &__text {
     margin: 0 2rem 2rem;
@@ -149,11 +184,22 @@ body {
   &-container {
     flex: 0 1 auto;
     margin-bottom: 4rem;
+
+    @media (max-width: $phone) {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
   }
 
   &-align {
     width: 50%;
     margin: 0 auto;
+
+    @media (max-width: $phone) {
+      width: 100%;
+      // margin-left: 1.5rem;
+      // text-align: left;
+    }
   }
 
   &-item {
@@ -178,6 +224,12 @@ input {
   padding-left: 0.2rem;
   font-family: "Lato", sans-serif;
 
+  @media (max-width: $phone) {
+    max-width: 100%;
+    // margin-left: 1.5rem;
+    // text-align: left;
+  }
+
   &:focus {
     box-shadow: 0 0 5px 2px $color-primary;
     outline-color: $color-primary;
@@ -195,6 +247,10 @@ input {
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
+
+  @media (max-width: $phone) {
+    flex-direction: column;
+  }
 }
 
 .results {
@@ -202,9 +258,17 @@ input {
     text-align: left;
     flex: auto;
 
+    @media (max-width: $phone) {
+      width:100%;    
+    }
+    
     &--old {
       margin-right: 1rem;
       color: #666666;
+
+      @media (max-width: $phone) {
+        margin-bottom: 1.5rem;
+      }
     }
   }
 

@@ -34,17 +34,26 @@ h1 {
   color: #fff;
   font-size: 6rem;
   font-family: feltro-normal, sans-serif; }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 4.5rem; } }
 
 h2 {
   text-align: center;
   font-family: Merriweather, serif;
   margin-bottom: 2rem;
   font-size: 2.5rem; }
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem; } }
 
 .h2--white {
   color: #fff;
   font-size: 2rem;
   margin-bottom: 0.5rem; }
+  @media (max-width: 768px) {
+    .h2--white {
+      font-size: 1.5rem; } }
 
 .intro--math {
   margin-bottom: 2rem; }
@@ -53,6 +62,9 @@ body {
   font-family: "Lato", sans-serif;
   color: #301914;
   font-size: 1.7rem; }
+  @media (max-width: 768px) {
+    body {
+      font-size: 1.5rem; } }
 
 .navbar {
   background-color: #ff866c;
@@ -73,13 +85,6 @@ body {
   color: #fff; }
 
 /*~~~~~~~~~~~~~~~~~~ TITLE CARD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.section-title {
-  margin: 2rem auto;
-  max-width: 800px;
-  background-color: #ffead9;
-  box-shadow: 0 7px 20px #7e6652;
-  border-radius: 10px; }
-
 .title__wrapper {
   margin-bottom: 3rem;
   padding: 2.5rem 0 2.5rem;
@@ -93,19 +98,28 @@ body {
 
 /*~~~~~~~~~~~~~~~~~~~~~~ CENTER CARD ~~~~~~~~~~~~~~~~~~~~~*/
 .section-maincard {
-  margin: 0 auto;
+  margin: 2rem auto;
   max-width: 800px;
   background-color: #ffead9;
   box-shadow: 0 7px 20px #7e6652;
   border-radius: 10px;
   text-align: center; }
+  @media (max-width: 768px) {
+    .section-maincard {
+      max-width: 80%; } }
 
 .card-padding {
   padding: 0 5rem 5rem; }
+  @media (max-width: 768px) {
+    .card-padding {
+      padding: 0 2.5rem 4rem; } }
 
 /* ~~~~~~~~~~~~~~~~~ HOW IT WORKS SECTION ~~~~~~~~~~~~~~~~~~~*/
 .howitworks {
   margin-bottom: 4rem; }
+  @media (max-width: 768px) {
+    .howitworks {
+      margin-bottom: 2.5rem; } }
   .howitworks__text {
     margin: 0 2rem 2rem; }
 
@@ -113,10 +127,17 @@ body {
 .form-container {
   flex: 0 1 auto;
   margin-bottom: 4rem; }
+  @media (max-width: 768px) {
+    .form-container {
+      text-align: center;
+      margin-bottom: 2.5rem; } }
 
 .form-align {
   width: 50%;
   margin: 0 auto; }
+  @media (max-width: 768px) {
+    .form-align {
+      width: 100%; } }
 
 .form-item {
   text-align: left;
@@ -137,6 +158,9 @@ input {
   margin-left: 1rem;
   padding-left: 0.2rem;
   font-family: "Lato", sans-serif; }
+  @media (max-width: 768px) {
+    input {
+      max-width: 100%; } }
   input:focus {
     box-shadow: 0 0 5px 2px #ff866c;
     outline-color: #ff866c;
@@ -151,13 +175,22 @@ input {
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly; }
+  @media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column; } }
 
 .results__container {
   text-align: left;
   flex: auto; }
+  @media (max-width: 768px) {
+    .results__container {
+      width: 100%; } }
   .results__container--old {
     margin-right: 1rem;
     color: #666666; }
+    @media (max-width: 768px) {
+      .results__container--old {
+        margin-bottom: 1.5rem; } }
 
 .results__title {
   margin-bottom: 1rem;
