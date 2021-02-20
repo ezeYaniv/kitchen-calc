@@ -98,7 +98,7 @@ body {
 
 /*~~~~~~~~~~~~~~~~~~~~~~ CENTER CARD ~~~~~~~~~~~~~~~~~~~~~*/
 .section-maincard {
-  margin: 2rem auto;
+  margin: 3rem auto 1rem;
   max-width: 800px;
   background-color: #ffead9;
   box-shadow: 0 7px 20px #7e6652;
@@ -106,7 +106,12 @@ body {
   text-align: center; }
   @media (max-width: 768px) {
     .section-maincard {
-      max-width: 80%; } }
+      max-width: 80%;
+      margin-top: 2rem; } }
+  @media (max-width: 992px) {
+    .section-maincard {
+      max-width: 85%;
+      margin-top: 2rem; } }
 
 .card-padding {
   padding: 0 5rem 5rem; }

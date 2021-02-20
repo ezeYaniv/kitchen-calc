@@ -147,7 +147,7 @@ body {
 /*~~~~~~~~~~~~~~~~~~~~~~ CENTER CARD ~~~~~~~~~~~~~~~~~~~~~*/
 
 .section-maincard {
-  margin: 2rem auto;
+  margin: 3rem auto 1rem;
   max-width: 800px;
   background-color: $color-secondary;
   box-shadow: 0 7px 20px $color-shadow;
@@ -156,6 +156,12 @@ body {
 
   @media (max-width: $phone) {
     max-width: 80%;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 85%;
+    margin-top: 2rem;
   }
 }
 
