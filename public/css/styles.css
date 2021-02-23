@@ -24,11 +24,18 @@ body {
   /* background-blend-mode: lighten; */
   position: relative;
   width: 100%; }
+  @media (max-width: 600px) {
+    body {
+      background-size: 40%; } }
 
 .content-wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%; }
+
+@media (max-width: 600px) {
+  .linebreak {
+    display: block; } }
 
 h1 {
   color: #fff;
@@ -138,7 +145,6 @@ body {
       margin-bottom: 2.5rem; } }
 
 .form-align {
-  width: 50%;
   margin: 0 auto; }
   @media (max-width: 768px) {
     .form-align {
@@ -148,6 +154,9 @@ body {
   text-align: left;
   display: inline-block;
   margin-bottom: 1rem; }
+  @media (max-width: 600px) {
+    .form-item {
+      text-align: center; } }
 
 .btn {
   padding: 1rem 2rem;
@@ -163,7 +172,7 @@ input {
   margin-left: 1rem;
   padding-left: 0.2rem;
   font-family: "Lato", sans-serif; }
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     input {
       max-width: 100%; } }
   input:focus {
@@ -173,7 +182,8 @@ input {
     border: 0px solid black; }
 
 .input-number {
-  max-width: 60px; }
+  max-width: 60px;
+  text-align: center; }
 
 /* ~~~~~~~~~~~~~~~~~ RESULTS SECTION ~~~~~~~~~~~~~~*/
 .flex-container {
@@ -215,7 +225,34 @@ input {
   list-style-position: outside;
   padding-left: 2rem; }
 
-/* ~~~~~~~~~~~~~~~~~~ RESULTS PAGE ~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~ FOOTER SECTION ~~~~~~~~~~~~~~~~~~~*/
+footer {
+  margin-top: 4rem;
+  bottom: 0;
+  width: 100%;
+  text-align: center; }
+
+.footer-container {
+  background-color: #ff866c;
+  padding: 2rem 3rem 1.5rem; }
+
+.footer__copyright {
+  color: #fff;
+  font-size: 1.4rem; }
+  @media (max-width: 600px) {
+    .footer__copyright {
+      font-size: 1.2rem; } }
+  @media (min-width: 768px) {
+    .footer__copyright {
+      font-size: 1.5rem; } }
+  .footer__copyright--vecteezy {
+    font-size: 0.9rem;
+    text-decoration: none; }
+    @media (max-width: 600px) {
+      .footer__copyright--vecteezy {
+        font-size: 0.8rem; } }
+
+/* ~~~~~~~~~~~~~~~~~~ RESULTS PAGE (UNUSED) ~~~~~~~~~~~~~~~~~~~~~~*/
 .section-results {
   /* height: 60vh; */
   width: 800px;
@@ -230,21 +267,3 @@ input {
 .results__h1 {
   text-align: center;
   margin-bottom: 2rem; }
-
-/*~~~~~~~~~~~~~~~~~~~ FOOTER SECTION ~~~~~~~~~~~~~~~~~~~*/
-footer {
-  margin-top: 4rem;
-  bottom: 0;
-  width: 100%;
-  text-align: center; }
-
-.footer-container {
-  background-color: #ff866c;
-  padding: 2rem 0 1.5rem; }
-
-.footer__copyright {
-  color: #fff;
-  font-size: 1.5rem; }
-  .footer__copyright--vecteezy {
-    color: #ddd;
-    font-size: 1rem; }

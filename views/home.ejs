@@ -22,33 +22,39 @@
         <p class="howitworks__text">Copy & paste the recipe URL, input your desired servings and press convert. It's that easy!</p>
       </div>
       <div class="section-form">
-        <h2 class="form__title">Let's Cook</h2>
+        <h2 class="form__title">Let's Cook!</h2>
         <form action="/" method="POST" class="form-container">
           <div class="form-align">
             <div class="form-item">
               <label for="url">Recipe URL: </label>
-              <input
+              <span class="linebreak">
+                <input
                 type="text"
                 id="url"
                 name="url"
-                size="25;"
+                size="25"
                 placeholder="https://www.example.com"
                 pattern="?:^www\..*|?:^http."
-                oninvalid="setCustomValidity('Please make sure your URL starts with http, https, or www.')"
+                oninvalid="setCustomValidity('Please make sure your URL starts with http, https, or www')"
                 value = "<%= url %>"
                 required
                 autofocus
               />
+            </span>
             </div>
             <br />
             <div class="form-item">
               <label for="servingsOld">Original servings?</label>
-              <input type="number" id="servingsOld" name="servingsOld" required class="input-number" value="<%= servingsOld %>" />
+              <span class="linebreak">
+                <input type="number" id="servingsOld" name="servingsOld" required class="input-number" value="<%= servingsOld %>" />
+              </span>
             </div>
             <br />
             <div class="form-item">
               <label for="servingsNew">Desired servings?</label>
-              <input type="number" id="servingsNew" name="servingsNew" required class="input-number" value="<%= servingsNew %>" />
+              <span class="linebreak">
+                <input type="number" id="servingsNew" name="servingsNew" required class="input-number" value="<%= servingsNew %>" />
+              </span>
             </div>
           </div>
           <button type="submit" class="btn btn--adjust">Convert!</button>
