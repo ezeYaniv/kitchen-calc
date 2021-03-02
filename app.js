@@ -121,7 +121,7 @@ app.post("/", function (req, res) {
                 console.log(a[1]);
                 };*/
 
-          //convert newNum from decimal to mixed fraction string (if newNum is .333, .666 or .999, change back to a string fraction so that the toFraction function doesn't give things like 500/133)
+          //convert newNum from decimal to mixed fraction string (if newNum is .333, .666 or .999, change back to a string fraction so that the toFraction function doesn't return 500/133)
           if (isNaN(newNum)) {
             newNum = "";
           } else if (newNum == 0.333) {

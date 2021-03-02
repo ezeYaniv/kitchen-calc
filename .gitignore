@@ -1,6 +1,7 @@
 #folders
 node_modules/
 vector-ignore
+unused-ignore
 
 # Logs
 logs

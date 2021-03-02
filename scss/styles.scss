@@ -349,27 +349,3 @@ footer {
     }
   }
 }
-
-
-
-
-
-/* ~~~~~~~~~~~~~~~~~~ RESULTS PAGE (UNUSED) ~~~~~~~~~~~~~~~~~~~~~~*/
-.section-results {
-  /* height: 60vh; */
-  width: 800px;
-  margin: 2rem auto;
-  /* max-width: 50%; */
-  background-color: $color-secondary;
-  box-shadow: $color-shadow;
-  border-radius: 10px;
-  padding: 5rem;
-  background-color: antiquewhite;
-}
-
-.results {
-  &__h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-}
