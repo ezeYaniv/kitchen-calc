@@ -9,7 +9,7 @@ const jsdom = require("jsdom");
 const ejs = require("ejs");
 //note: I also installed jquery with npm i jquery, it is required in the asynchronous function below.
 
-const createList = require(__dirname + "/createList.js");
+// const createList = require(__dirname + "/createList.js");
 
 //installed npm i fraction.js to convert decimals back into fractions
 const Fraction = require("fraction.js");
@@ -57,7 +57,7 @@ app.post("/", function (req, res) {
     $(dom.window.document).ready(function () {
       let listItems;
 
-      /************************* CHECKS WPRM SITES VS. NON-WPRM ******************************** */
+      // CHECKS WPRM SITES VS. NON-WPRM
       if ($(".wprm-recipe-ingredients").length > 0) {
         listItems = $(".wprm-recipe-ingredients > li.wprm-recipe-ingredient").get();
       } else {
@@ -146,10 +146,6 @@ app.post("/", function (req, res) {
       res.redirect("/");
     });
   })();
-});
-
-app.get("/results", function (req, res) {
-  res.render("results", { oldList: oldList, newList: newList, servingsOld: servingsOld, servingsNew: servingsNew });
 });
 
 let port = process.env.PORT;
