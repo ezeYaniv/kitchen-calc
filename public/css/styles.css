@@ -165,7 +165,16 @@ body {
   border-radius: 5px;
   color: #fff;
   box-shadow: 0 2px 5px #a6866c;
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  transition: all ease 0.2s; }
+  .btn:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px #a6866c;
+    transform: translateY(-2px); }
+  .btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px #a6866c;
+    transition: all 0.05s; }
 
 input {
   height: 3rem;
@@ -251,19 +260,3 @@ footer {
     @media (max-width: 600px) {
       .footer__copyright--vecteezy {
         font-size: 0.8rem; } }
-
-/* ~~~~~~~~~~~~~~~~~~ RESULTS PAGE (UNUSED) ~~~~~~~~~~~~~~~~~~~~~~*/
-.section-results {
-  /* height: 60vh; */
-  width: 800px;
-  margin: 2rem auto;
-  /* max-width: 50%; */
-  background-color: #ffead9;
-  box-shadow: #7e6652;
-  border-radius: 10px;
-  padding: 5rem;
-  background-color: antiquewhite; }
-
-.results__h1 {
-  text-align: center;
-  margin-bottom: 2rem; }

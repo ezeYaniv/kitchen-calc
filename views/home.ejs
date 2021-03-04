@@ -36,14 +36,14 @@
             <div class="form-item">
               <label for="servingsOld">Original servings?</label>
               <span class="linebreak">
-                <input type="number" id="servingsOld" name="servingsOld" required class="input-number" value="<%= servingsOld %>" />
+                <input type="number" id="servingsOld" min="1" max="1000" name="servingsOld" required class="input-number" value="<%= servingsOld %>" />
               </span>
             </div>
             <br />
             <div class="form-item">
               <label for="servingsNew">Desired servings?</label>
               <span class="linebreak">
-                <input type="number" id="servingsNew" name="servingsNew" required class="input-number" value="<%= servingsNew %>" />
+                <input type="number" id="servingsNew" min="1" max="1000" name="servingsNew" required class="input-number" value="<%= servingsNew %>" />
               </span>
             </div>
           </div>

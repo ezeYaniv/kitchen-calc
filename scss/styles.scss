@@ -234,6 +234,17 @@ body {
   color: #fff;
   box-shadow: 0 2px 5px #a6866c;
   margin: 1rem 0;
+  transition: all ease 0.2s;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px #a6866c;
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px #a6866c;
+    transition: all 0.05s;
+  }
 }
 
 input {
