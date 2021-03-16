@@ -36,8 +36,8 @@ In this project, I practiced creating a webpage with Express and how to handle b
 3. Using jQuery, the app searches the site's DOM to find the ingredients list and adds each item as a new array element
 4. A few conditionals, a massive regular expression (see below) and the npm package numeric-quantity parse the ingredient quantity strings into numbers
 5. Using the user inputted original and desired servings, multiply the parsed numbers for final yield
-6. res.redirect to the root path, which renders the home page passing the old and new ingredient arrays
-7. Using EJS scripting, create a dynamic length HTML ingredients list
+6. res.redirect to the root path, which renders the home page passing the old and new ingredient list arrays
+7. Using EJS scripting, create dynamic length HTML ingredients lists for the user to cook with
 
 ### Known Issues & Bugs
 Issues can be found in this repo's [Issues](https://github.com/ezeYaniv/kitchen-calc/issues) tab.
