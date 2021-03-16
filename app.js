@@ -9,8 +9,6 @@ const jsdom = require("jsdom");
 const ejs = require("ejs");
 //note: I also installed jquery with npm i jquery, it is required in the asynchronous function below.
 
-// const createList = require(__dirname + "/createList.js");
-
 //installed npm i fraction.js to convert decimals back into fractions
 const Fraction = require("fraction.js");
 
@@ -57,10 +55,11 @@ app.post("/", function (req, res) {
     $(dom.window.document).ready(function () {
       let listItems;
 
-      // CHECKS WPRM SITES VS. NON-WPRM
+      // WPRM is the most common recipe site builder plugin used by food bloggers. This conditional checks whether a site was built with WPRM then creates an array with each ingredient list item
       if ($(".wprm-recipe-ingredients").length > 0) {
         listItems = $(".wprm-recipe-ingredients > li.wprm-recipe-ingredient").get();
       } else {
+        //~~~~~~~~~~~~~~~~~~~~~~~~ Issue: insert more conditionals here to better find the Ingredients list ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         listItems = $(":header")
           .filter(function () {
             return $(this).text() == "Ingredients";
@@ -95,9 +94,10 @@ app.post("/", function (req, res) {
             newNumArray[i] *= servingsMult;
           }
           newNum = newNumArray[0] + "-" + newNumArray[1];
+        
+        //This code check for "1 to 2 cups" 
         } else if (regexTo.exec(currentLi)) {
           liNumber = regexTo.exec(currentLi);
-          // liNumber[0] = liNumber[0].replace(/\s+/, "").slice(0, -1); //removes spaces
           let newNumArray = liNumber[0].replace(/\s/g, "").split("to"); //creates new array with 2 numbers split at the "to"
           for (let i = 0; i < newNumArray.length; i++) {
             newNumArray[i] *= servingsMult;
