@@ -8,12 +8,16 @@ No more mental kitchen math - [try it here!](https://kitchen-calc.herokuapp.com/
 I created this project to solve a problem we've all faced while cooking: trying to convert a recipe that serves 4 to serve 6 (or 2, or 11) in our heads. Two and a quarter cups times 1.5, anyone?  
 This web app makes it easy to multiply ingredient measurements for the right number of mouths.
 
+---
+
 ## Usage
 🖨️ Copy & paste a recipe's URL and input your desired servings. The app will automatically display the recipe's new ingredient list.
 
 🍳 The final version of Kitchen Calc can be accessed at https://kitchen-calc.herokuapp.com/
 
 📱 Yes, I'm mobile responsive!
+
+---
 
 ## Under the Hood
 ### Technologies Applied & Skills Learned
@@ -36,20 +40,21 @@ In this project, I practiced creating a webpage with Express and how to handle b
 7. Using EJS scripting, create a dynamic length HTML ingredients list
 
 ### Known Issues & Bugs
-Issues can be found in this repo's Issues tab.
+Issues can be found in this repo's [Issues](https://github.com/ezeYaniv/kitchen-calc/issues) tab.
 
 ### Biggest Challenge
 My biggest challenge was working with non-standard data: it turns out every food blogger has a different way of writing quantities! For example, all these are equal - 1½ cups, 1.5 cups, 1 1/2 cups, 1-1/2 cups, 1 & 1/2 cups. Figuring out how to parse those strings into numbers was tricky, but I accomplished it with **the mother of all regular expressions** - check this out:
 <br>
 `const regexAll = /(\d*)(\.\d+|(\s+\d*\s*)?\s*\/\s*\d+|(\-\d*\s*)?\s*\/\s*\d+|(\&\d*\s*)?\s*\/\s*\d+|\s*[\u00BC-\u00BE\u2150-\u215E]+|(\-[\u00BC-\u00BE\u2150-\u215E])?)?/;`
 
+---
+
 ## Screenshots
 ![fluffy pancakes for 10!](https://github.com/ezeYaniv/kitchen-calc/blob/main/public/images/partial-screenshot1.png)
 
+---
+
 ## Links
 * [The kitchen calc app (hosted on Heroku)](https://kitchen-calc.herokuapp.com/)
-* [Open issues](https://github.com/ezeYaniv/kitchen-calc/issues)
 
 <!-- ![Kitchen Calc logo](https://github.com/ezeYaniv/kitchen-calc/blob/main/public/images/kitchen-calc-favicon.ico "Kitchen Calc") -->
-
-###### Link to jsdom
