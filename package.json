@@ -8,7 +8,6 @@
     "ejs": "^3.1.5",
     "es6-promise": "^4.2.8",
     "express": "^4.17.1",
-    "format-quantity": "^1.0.1",
     "fraction.js": "^4.0.13",
     "isomorphic-fetch": "^3.0.0",
     "jquery": "^3.5.1",
