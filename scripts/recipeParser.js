@@ -1,5 +1,4 @@
 const numericQuantity = require('numeric-quantity'); //numeric-quantity converts vulgar fractions & numbers like "1 1/2" into a number
-const formatQuantity = require('format-quantity');
 const Fraction = require('fraction.js'); //fraction.js converts decimals back into mixed fractions
 
 function recipeParser(dom, servingsMult) {
