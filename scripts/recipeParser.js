@@ -2,14 +2,16 @@ const numericQuantity = require('numeric-quantity'); //numeric-quantity converts
 const Fraction = require('fraction.js'); //fraction.js converts decimals back into mixed fractions
 
 function recipeParser(dom, servingsMult) {
+  //this requires jquery and loads the $ selector for use
   const $ = (jQuery = require('jquery')(dom.window));
 
   let listItems;
 
-  // WPRM is the most common recipe site builder plugin used by food bloggers. This conditional checks if WPRM used then creates an array with each ingredient list item
+  // WPRM is the most common recipe site builder plugin used by food bloggers. This conditional checks whether a site was built with WPRM then creates an array with each ingredient list item
   if ($('.wprm-recipe-ingredients').length > 0) {
     listItems = $('.wprm-recipe-ingredients > li.wprm-recipe-ingredient').get();
   } else {
+    //~~~~~~~~~~~~~~~~~~~~~~~~ Issue: insert more conditionals here to better find the Ingredients list ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     listItems = $(':header')
       .filter(function () {
         return $(this).text() == 'Ingredients';
@@ -26,7 +28,7 @@ function recipeParser(dom, servingsMult) {
 
   //this code selects each li in the array, parses the numbers, converts to new quantity
   for (let i = 0; i < listItems.length; i++) {
-    //grab text content of each listItems element
+    //grab text content of each listItems array
     let currentLi = listItems[i].textContent.trim(); //NOTE: using trim because otherwise it adds new line break \n characters and breaks the regex
 
     // regex expressions to extract numbers from list items

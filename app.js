@@ -1,22 +1,22 @@
 //jshint esversion:6
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const https = require('https');
-const request = require('request');
-const fetch = require('isomorphic-fetch');
-const jsdom = require('jsdom');
-const ejs = require('ejs');
-const { recipeParser } = require('./scripts/recipeParser');
+const express = require("express");
+const bodyParser = require("body-parser");
+const https = require("https");
+const request = require("request");
+const fetch = require("isomorphic-fetch");
+const jsdom = require("jsdom");
+const ejs = require("ejs");
+const {recipeParser} = require('./scripts/recipeParser');
 
 const { JSDOM } = jsdom;
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-//global variable declarations
+//global variable declarations (needed to pass these as EJS variables to render "home")
 let newList = [];
 let oldList = [];
 let servingsOld;
@@ -44,12 +44,14 @@ app.post('/', function (req, res) {
     const text = await response.text();
     const dom = await new JSDOM(text);
 
+    
     //this requires jquery and loads the $ selector for use
     const $ = (jQuery = require('jquery')(dom.window));
 
-    //This ensures the webpage is loaded and runs the recipe parser function - outputs two arrays, the original ingredients and new quantity ingredients
+
     $(dom.window.document).ready(function () {
-      ({ oldList, newList } = recipeParser(dom, servingsMult));
+      
+      ({oldList, newList} = recipeParser(dom, servingsMult));
 
       res.redirect('/');
     });
